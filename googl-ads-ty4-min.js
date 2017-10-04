@@ -136,7 +136,7 @@
                     if (result = patterns[i].exec(videoURL)){
                         var previewURL = 'http' + ('https:' == location.protocol ? 's' : '') + ':';
                         previewURL += '//img.youtube.com/vi/' + result[1] + '/maxresdefault.jpg';
-                        $('.vidpreview:eq(0)', this).before(
+                        $('.vidpreview1:eq(1)', '.vidpreview2:eq(2)', '.vidpreview3:eq(3)', this).before(
                             $('<img>')
                                 .hide()
                                 .wrap('<div class="mbr-background-video-preview"></div>')
@@ -161,7 +161,21 @@
                         );
                         if ($.fn.YTPlayer && !$.isMobile()){
                             var params = eval('(' + ($(this).data('bg-video-params') || '{}') + ')');
-                            $('.vidpreview:eq(0)', this).before('<div class="mbr-background-video"></div>').prev()
+                            $('.vidpreview1:eq(0)', this).before('<div class="mbr-background-video"></div>').prev()
+                                .YTPlayer($.extend({
+                                    videoURL : result[1],
+                                    containment : 'self',
+                                    showControls : false,
+                                    mute : true
+                                }, params));
+                            $('.vidpreview2:eq(0)', this).before('<div class="mbr-background-video"></div>').prev()
+                                .YTPlayer($.extend({
+                                    videoURL : result[1],
+                                    containment : 'self',
+                                    showControls : false,
+                                    mute : true
+                                }, params));
+                            $('.vidpreview3:eq(0)', this).before('<div class="mbr-background-video"></div>').prev()
                                 .YTPlayer($.extend({
                                     videoURL : result[1],
                                     containment : 'self',
