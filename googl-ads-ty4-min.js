@@ -166,7 +166,7 @@
                                     videoURL : result[1],
                                     containment : 'self',
                                     showControls : false,
-                                    mute : false
+                                    mute : true
                                 }, params));
                         }
                         break;
