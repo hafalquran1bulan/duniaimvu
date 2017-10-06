@@ -1,6 +1,3 @@
-<script> 
-//<![CDATA[ 
-
 var ytp = ytp || {};
 
 $(document).on("YTAPIReady", function()  {
