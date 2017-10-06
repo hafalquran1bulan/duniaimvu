@@ -1,7 +1,9 @@
+<script> 
+//<![CDATA[ 
 
 var ytp = ytp || {};
 
-function onYouTubeIframeAPIReady() {
+$(document).on("YTAPIReady", function()  {
 	if( ytp.YTAPIReady ) return;
 	ytp.YTAPIReady = true;
 	jQuery( document ).trigger( "YTAPIReady" );
